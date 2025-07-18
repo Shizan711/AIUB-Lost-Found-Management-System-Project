@@ -1,0 +1,71 @@
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\bin\Debug\AiubLost&Found.exe.config
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\bin\Debug\AiubLost&Found.exe
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\bin\Debug\AiubLost&Found.pdb
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost&Found.csproj.AssemblyReference.cache
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.Properties.Resources.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost&Found.csproj.GenerateResource.cache
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost&Found.csproj.CoreCompileInputs.cache
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost&Found.exe
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost&Found.pdb
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.StuReg.resources
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\bin\Debug\AiubLost&Found.exe.config
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\bin\Debug\AiubLost&Found.exe
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\bin\Debug\AiubLost&Found.pdb
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\bin\Debug\Guna.UI2.dll
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost&Found.csproj.AssemblyReference.cache
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.Form1.resources
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.Properties.Resources.resources
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.StuReg.resources
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost&Found.csproj.GenerateResource.cache
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost&Found.csproj.CoreCompileInputs.cache
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost.E8125CCC.Up2Date
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost&Found.exe
+E:\SEMESTER-5\OOP2-C#\PRACTICE_AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost&Found.pdb
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.StuLog.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.TeaLog.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.TeaReg.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.AdminLog.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.EmpLog.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.EmpReg.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\bin\Debug\AiubLost&Found.exe.config
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\bin\Debug\AiubLost&Found.exe
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\bin\Debug\AiubLost&Found.pdb
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost&Found.csproj.AssemblyReference.cache
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.AdminDash.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.AdminLog.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.EmpLog.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.EmpReg.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.Properties.Resources.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.StuLog.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.StuReg.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.TeaLog.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.TeaReg.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost&Found.csproj.GenerateResource.cache
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost&Found.csproj.CoreCompileInputs.cache
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost&Found.exe
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost&Found.pdb
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.Dashboard.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.Report.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.Allitems.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.Search.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.adminItems.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.employee.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.faculty.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.student.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.AdminDash.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.adminItems.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.Allitems.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.Dashboard.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.employee.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.faculty.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.Report.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.Search.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.student.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.WelcomeDash.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.welcomeAdminDash.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.Start.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.Start.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.welcomeAdminDash.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.WelcomeDash.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found - Copy\AiubLost&Found\obj\Debug\AiubLost_Found.Loading.resources
+E:\SEMESTER-5\OOP2-C#\AiubLost&Found\AiubLost&Found\obj\Debug\AiubLost_Found.Loading.resources

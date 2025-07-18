@@ -1,0 +1,378 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace AiubLost_Found
+{
+    public partial class faculty : UserControl
+    {
+        static SqlConnection con = new SqlConnection("Data Source=MSI\\SQLEXPRESS;Initial Catalog=AiubLost&Found;Integrated Security=True;Encrypt=False");
+        static SqlCommand scmd;
+        public faculty()
+        {
+            InitializeComponent();
+            FacultyLoadData();
+        }
+        // Load data into the DataGridView
+        private void FacultyLoadData()
+        {
+            try
+            {
+                // Check if the connection is already open, and if so, close it
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+
+                // Open the database connection
+                con.Open();
+
+                // Query to retrieve all records from the FACULTY table
+                string query = "SELECT * FROM Faculty";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+                DataTable dt = new DataTable();
+
+                // Fill the DataTable with the query result
+                adapter.Fill(dt);
+
+                // Bind the DataTable to the DataGridView
+                FacultydataGridView.DataSource = dt;
+
+                // Ensure the DataGridView refreshes
+                FacultydataGridView.Refresh();
+            }
+            catch (Exception ex)
+            {
+                // Show an error message if loading data fails
+                MessageBox.Show("An error occurred while loading data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Ensure the connection is closed
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        bool Authenticate()
+        {
+            if (string.IsNullOrWhiteSpace(Facnamebox.Text) ||
+                string.IsNullOrWhiteSpace(idbox.Text) ||
+                string.IsNullOrWhiteSpace(mailbox.Text) ||
+                string.IsNullOrWhiteSpace(deptcomboBox.Text) ||
+                string.IsNullOrWhiteSpace(setPassbox.Text)
+
+                )
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void ADDbutton_Click(object sender, EventArgs e)
+        {
+            if (!Authenticate())
+            {
+                MessageBox.Show("All informations must be filled!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            // Check if the employee ID already exists in the database
+            string checkQuery = "SELECT COUNT(*) FROM Faculty WHERE Id = @Id";
+            bool idExists = false;
+
+            try
+            {
+                con.Open();
+                using (SqlCommand checkCmd = new SqlCommand(checkQuery, con))
+                {
+                    checkCmd.Parameters.AddWithValue("@Id", idbox.Text.Trim());
+                    int count = (int)checkCmd.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        idExists = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while checking ID existence: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            // If the ID already exists, show a message and exit
+            if (idExists)
+            {
+                MessageBox.Show("Faculty with this ID already exists!", "Duplicate ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string query = "INSERT INTO Faculty VALUES(@Name,@Id,@Mail,@Department,@Password)";
+
+            try
+            {
+                con.Open();
+                scmd = new SqlCommand(query, con);
+
+                // Adding parameters
+                scmd.Parameters.AddWithValue("@Name", Facnamebox.Text.Trim());
+                scmd.Parameters.AddWithValue("@Id", idbox.Text.Trim());
+                scmd.Parameters.AddWithValue("@Mail", mailbox.Text.Trim());
+                scmd.Parameters.AddWithValue("@Department", deptcomboBox.SelectedItem?.ToString().Trim());
+                scmd.Parameters.AddWithValue("@Password", setPassbox.Text.Trim());
+
+                int rowsAffected = scmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show(" Faculty Added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FacultyLoadData(); // Refresh DataGridView after success
+                    resetbtn.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Add Faculty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void UPDATEbutton_Click(object sender, EventArgs e)
+        {
+
+            if (FacultydataGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please Select a Faculty to update!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!Authenticate())
+            {
+                MessageBox.Show("All informations must be filled!", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Retrieve values from the selected row
+            string originalName = FacultydataGridView.SelectedRows[0].Cells["Name"].Value.ToString();
+
+
+            string query = "UPDATE Faculty SET Name = @NewName, Id = @Id, Mail = @Mail, Department = @Department, Password = @Password WHERE Name =@OriginalName ";
+
+
+
+
+            try
+            {
+                con.Open();
+                scmd = new SqlCommand(query, con);
+
+                // Adding parameters
+                scmd.Parameters.AddWithValue("@NewName", Facnamebox.Text.Trim());
+                scmd.Parameters.AddWithValue("@Id", idbox.Text.Trim());
+                scmd.Parameters.AddWithValue("@Mail", mailbox.Text.Trim());
+                scmd.Parameters.AddWithValue("@Department", deptcomboBox.SelectedItem?.ToString().Trim());
+                scmd.Parameters.AddWithValue("@Password", setPassbox.Text.Trim());
+
+                // Adding parameters to identify the original record
+                scmd.Parameters.AddWithValue("@OriginalName", originalName);
+
+                int rowsAffected = scmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show(" Faculty Updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FacultyLoadData(); // Refresh DataGridView after success
+                    resetbtn.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Update Faculty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+        private void SEARCHbutton_Click(object sender, EventArgs e)
+        {
+
+            string query = @"SELECT * FROM Faculty WHERE 
+                            (@Name = '' OR Name LIKE @Name) AND
+                            (@Id = '' OR Id LIKE @Id) AND
+                            (@Mail = '' OR Mail LIKE @Mail) AND
+                            (@Department = '' OR Department LIKE @Department) AND
+                            (@Password = '' OR Password LIKE @Password)";
+
+            try
+            {
+                using (SqlCommand scmd = new SqlCommand(query, con))
+                {
+                    // Add parameters for search fields
+                    scmd.Parameters.AddWithValue("@Name", "%" + Facnamebox.Text.Trim() + "%");
+                    scmd.Parameters.AddWithValue("@Id", "%" + idbox.Text.Trim() + "%");
+                    scmd.Parameters.AddWithValue("@Mail", "%" + mailbox.Text.Trim() + "%");
+                    scmd.Parameters.AddWithValue("@Department", "%" + deptcomboBox.Text.Trim() + "%");
+                    scmd.Parameters.AddWithValue("@Password", "%" + setPassbox.Text.Trim() + "%");
+
+
+                    con.Open();
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(scmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+
+                        // Bind search results to DataGridView
+                        FacultydataGridView.DataSource = dt;
+
+                        // Display a message based on the number of matching items found
+                        int matchCount = dt.Rows.Count;
+                        if (matchCount > 0)
+                        {
+                            MessageBox.Show($"{matchCount} Faculty(s) found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            FacultyLoadData(); // Refresh DataGridView after success
+                            resetbtn.PerformClick();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Faculty found.", "Search Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            FacultyLoadData(); // Refresh DataGridView after success
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while searching: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+
+        }
+
+        private void DELETEbutton_Click(object sender, EventArgs e)
+        {
+            if (FacultydataGridView.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a student to delete!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected faculty ID from the DataGridView
+            string facultyId = FacultydataGridView.SelectedRows[0].Cells["Id"].Value.ToString();
+
+            // Confirmation prompt
+            DialogResult confirmResult = MessageBox.Show("Are you sure you want to delete this faculty?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                string query = "DELETE FROM Faculty WHERE Id = @Id";
+
+                try
+                {
+                    con.Open();
+                    using (SqlCommand scmd = new SqlCommand(query, con))
+                    {
+                        scmd.Parameters.AddWithValue("@Id", facultyId);
+
+                        int rowsAffected = scmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Faculty deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            FacultyLoadData(); // Refresh DataGridView
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete faculty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    if (con.State == ConnectionState.Open)
+                    {
+                        con.Close();
+                    }
+                }
+            }
+        }
+
+        private void resetbtn_Click(object sender, EventArgs e)
+        {
+            // Clear textboxes
+            Facnamebox.Clear();
+            idbox.Clear();
+            mailbox.Clear();
+            setPassbox.Clear();
+
+            // Reset ComboBoxes
+            deptcomboBox.SelectedIndex = -1;
+
+
+            // Optionally set focus to the first input field
+            Facnamebox.Focus();
+
+            // Clear DataGridView selection
+            if (FacultydataGridView.DataSource != null)
+            {
+                FacultydataGridView.ClearSelection();
+            }
+        }
+
+        private void FacultydataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = FacultydataGridView.Rows[e.RowIndex];
+
+                // Populate the form fields with the selected row's data
+                Facnamebox.Text = row.Cells["Name"].Value.ToString();
+                idbox.Text = row.Cells["Id"].Value.ToString();
+                mailbox.Text = row.Cells["Mail"].Value.ToString();
+                deptcomboBox.SelectedItem = row.Cells["Department"].Value.ToString();
+                setPassbox.Text = row.Cells["Password"].Value.ToString();
+            }
+        }
+    }
+}
+
+
+       
+    
